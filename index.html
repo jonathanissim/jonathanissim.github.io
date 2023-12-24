@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  <html data-theme='light'></html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,36 @@
     <title>My Website</title>
     <link rel="stylesheet" href="./resources/css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+    <script>
+      window.addEventListener("load", () => {
+        const themePicker = document.getElementById("theme-picker")
+        themePicker.addEventListener('change', function() {
+          const theme = this.value
+          document.querySelector("html").setAttribute("data-theme", theme)
+        })
+      })
+    </script>
+
   </head>
   <body>
     <main>
         <h1>Welcome to My Website</h1>  
     </main>
 	<script src="resources/js/index.js"></script>
-    <button onclick="myFunction()">Toggle dark mode</button>
+    <div class="card">
+      <nav>
+        <select id='theme-picker'>
+          <option value="light" selected>Light</option>
+          <option value="dark">Dark</option>
+          <option value="system">System</option>
+          <option value="sunset">Sunset</option>
+          <option value="moonlight">Moon light</option>
+          <option value="cartoon">Cartoon</option>
+          <option value="bluecrystal">Blue crystal</option>
+        </select>
+      </nav>
+    </div>
+
   </body>
 </html>

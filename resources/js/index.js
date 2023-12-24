@@ -1,5 +1,9 @@
-function toggleDarkMode() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-  }
-
+function cardThemes() {
+  window.addEventListener("load", () => {
+    const themePicker = document.getElementById("theme-picker")
+    themePicker.addEventListener('change', function() {
+      const theme = this.value
+      document.querySelector("html").setAttribute("data-theme", theme)
+    })
+  })
+}
