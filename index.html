@@ -9,15 +9,7 @@
     <link rel="stylesheet" href="./resources/css/style.css">
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-    <script>
-      window.addEventListener("load", () => {
-        const themePicker = document.getElementById("theme-picker")
-        themePicker.addEventListener('change', function() {
-          const theme = this.value
-          document.querySelector("html").setAttribute("data-theme", theme)
-        })
-      })
-    </script>
+    <script src="resources/js/them-picker-listener.js"></script>
 
   </head>
   <body>
