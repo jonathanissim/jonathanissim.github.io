@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <html data-theme='light'></html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>My Website</title>
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+<html data-theme='dark'>
 
-    <script src="resources/js/them-picker-listener.js"></script>
+</html>
 
-  </head>
-  <body>
-    <main>
-        <h1>Welcome to My Website</h1>  
-    </main>
-	<script src="resources/js/index.js"></script>
-    <div class="card">
-      <nav>
-        <select id='theme-picker'>
-          <option value="light" selected>Light</option>
-          <option value="dark">Dark</option>
-          <option value="system">System</option>
-          <option value="sunset">Sunset</option>
-          <option value="moonlight">Moon light</option>
-          <option value="cartoon">Cartoon</option>
-          <option value="bluecrystal">Blue crystal</option>
-        </select>
-      </nav>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Website</title>
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
 
-  </body>
+  <script src="resources/js/index.js"></script>
+  <script src="resources/js/on-load.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <h1>Welcome to My Website</h1>
+  </main>
+
+  <script src="resources/js/index.js"></script>
+  <button type="button" data-theme-toggle aria-label="Change to light theme">Change to light theme</button>
+
+
+</body>
+
 </html>
