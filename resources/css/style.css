@@ -1,11 +1,6 @@
 [data-theme="light"] {
-  --color-bg: #666666;
+  --color-bg: #1a2024;
   --color-fg: #000000;
-}
-
-[data-theme="dark"] {
-  --color-bg: #000000;
-  --color-fg: #ffffff;
 }
 
 body {
@@ -25,15 +20,27 @@ button {
 
 #puzzleContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 100px); /* Equal width columns */
+  grid-template-rows: repeat(5, 100px); /* Equal height rows */
   grid-gap: 2px;
-  width: 20%;
+  justify-content: center;
   margin: 0 auto;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+  aspect-ratio: 1;
 }
 
 .puzzle-item {
-  background-color: #f0f0f0;
+  /* width: 100%; */
+  background-color: var(--color-bg);
   padding: 20px;
+  margin: 2px;
   text-align: center;
+  font-size: 4vw;
+  font-family: 'Courier New', Courier, monospace;
+  color: #a2b2bd;
+  border: 2px solid #79848b;
+  border-radius: 15px;
+
 }
