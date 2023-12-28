@@ -9,9 +9,31 @@
 }
 
 body {
- background-color: var(--color-bg);
- color: var(--color-fg);
- display: grid;
- min-height: 100vh;
- place-items: center;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+button {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  display:grid;
+  place-items: center;
+}
+
+#puzzleContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2px;
+  width: 20%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+.puzzle-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
 }
