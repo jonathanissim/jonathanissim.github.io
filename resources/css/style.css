@@ -1,5 +1,5 @@
 [data-theme="light"] {
-  --color-bg: #ffffff;
+  --color-bg: #666666;
   --color-fg: #000000;
 }
 
@@ -14,16 +14,4 @@ body {
  display: grid;
  min-height: 100vh;
  place-items: center;
-}
-
-button {
- font-size: 2rem;
- font-weight: bold;
- padding: 0.5rem 1rem;
- transition: all var(--global-transition-time) ease-in-out;
- border-radius: 2rem;
- cursor: pointer;
- color: var(--color-fg);
- background-color: var(--color-bg);
- border: 0.25rem solid var(--color-fg);
 }
