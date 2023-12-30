@@ -25,8 +25,8 @@ function fillCrosswordGrid() {
   fetch('assets/five-by-five-crosswords.txt')
     .then(response => response.text())
     .then(text => {
-      const lines = text.split('\n'); // Split text into lines
-      const words = lines[getRandomInt(0, lines.length)].split(',').slice(0, 5); // Use the first line, split by comma
+      const lines = text.split('\n');
+      const words = lines[getRandomInt(0, lines.length)].split(',').slice(0, 5);
       fillCrosswordGridWithWords(words);
     })
     .catch(error => {
@@ -37,10 +37,7 @@ function fillCrosswordGrid() {
 function fillCrosswordGridWithWords(words) {
   const cells = document.querySelectorAll('.puzzle-item');
   cells.forEach((cell, index) => {
-    // cell.value = index;
-    // if (index < words.length) {
-      cell.value = words[Math.floor(index / 5)][index % 5];
-    // }
+    cell.value = words[Math.floor(index / 5)][index % 5];
   });
 }
 
