@@ -44,3 +44,12 @@ button {
   border-radius: 15px;
 
 }
+
+h1 {
+  color: #a2b2bd;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  margin-top: 20px;
+  /* Other styles */
+}
