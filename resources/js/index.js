@@ -10,7 +10,7 @@ function generateCrosswordGrid() {
   for (let i = 0; i < 25; i++) {
     const puzzleCell = document.createElement("input");
     puzzleCell.classList.add("puzzle-item");
-    
+
     // Replace character on input
     puzzleCell.addEventListener("input", function () {
       this.value = this.value.charAt(this.value.length - 1);
@@ -20,12 +20,33 @@ function generateCrosswordGrid() {
   }
 }
 
-function fillCrosswordGrid() {
-  // Select all cells in the crossword grid
-  const cells = document.querySelectorAll('.puzzle-item');
 
-  // Iterate through each cell and fill it with 'a'
-  cells.forEach(cell => {
-    cell.value = 'a';
+function fillCrosswordGrid() {
+  fetch('assets/five-by-five-crosswords.txt')
+    .then(response => response.text())
+    .then(text => {
+      const lines = text.split('\n'); // Split text into lines
+      const words = lines[getRandomInt(0, lines.length)].split(',').slice(0, 5); // Use the first line, split by comma
+      fillCrosswordGridWithWords(words);
+    })
+    .catch(error => {
+      console.error('Error loading the words:', error);
+    });
+}
+
+function fillCrosswordGridWithWords(words) {
+  const cells = document.querySelectorAll('.puzzle-item');
+  cells.forEach((cell, index) => {
+    // cell.value = index;
+    // if (index < words.length) {
+      cell.value = words[Math.floor(index / 5)][index % 5];
+    // }
   });
+}
+
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
