@@ -6,13 +6,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Website</title>
   <link rel="stylesheet" href="./resources/css/style.css">
   <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
 
-  <script src="resources/js/index.js"></script>
+  <script type=module src="resources/js/index.js"></script>
+
+  <link rel="stylesheet" href="node_modules/kioskboard/dist/kioskboard-2.3.0.min.css" />
+  <script src="node_modules/kioskboard/dist/kioskboard-2.3.0.min.js"></script>
+  
 </head>
 
 <body>
@@ -24,7 +28,15 @@
   </div>
 
   <button id="fillGridButton">Fill Grid</button>
-  
+
+  <!-- An example of a textarea element: The keyboard type is "all", the placement is "top", and the availability of the special characters is "true". -->
+  <!-- <textarea class="js-kioskboard-input" data-kioskboard-type="all" data-kioskboard-placement="top" data-kioskboard-specialcharacters="true" placeholder="Your Address"></textarea> -->
+
+  <!-- An example of an input element: The keyboard type is "keyboard", the placement is "bottom", and the availability of the special characters is "false". -->
+  <!-- <input class="js-kioskboard-input" data-kioskboard-type="keyboard" data-kioskboard-placement="bottom" data-kioskboard-specialcharacters="false" placeholder="Your Name" /> -->
+
+  <!-- An example of an input element: The keyboard type is "numpad", and the placement is "bottom". (Special characters are not allowed for "numpad".) -->
+  <!-- <input class="js-kioskboard-input" data-kioskboard-type="numpad" data-kioskboard-placement="bottom" placeholder="Your Number" /> -->
 
 </body>
 
