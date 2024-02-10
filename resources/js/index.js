@@ -1,3 +1,6 @@
+const CROSSWORD_SIZE = 5;
+
+
 window.onload = function () {
   generateCrosswordGrid();
   document.getElementById('fillGridButton').addEventListener('click', fillCrosswordGrid);
@@ -7,7 +10,7 @@ window.onload = function () {
 function generateCrosswordGrid() {
   const puzzleContainer = document.getElementById("puzzleContainer");
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < CROSSWORD_SIZE * CROSSWORD_SIZE; i++) {
     const puzzleCell = document.createElement("input");
     puzzleCell.classList.add("puzzle-item");
 
@@ -22,11 +25,13 @@ function generateCrosswordGrid() {
 
 
 function fillCrosswordGrid() {
-  fetch('assets/five-by-five-crosswords.txt')
+  // fetch('assets/five-by-five-crosswords.txt')
+  fetch('assets/test.txt')
     .then(response => response.text())
     .then(text => {
       const lines = text.split('\n');
-      const words = lines[getRandomInt(0, lines.length)].split(',').slice(0, 5);
+      const length_without_trailing_newline = lines.length - 2;
+      const words = lines[getRandomInt(0, length_without_trailing_newline)].split(',').slice(0, CROSSWORD_SIZE);
       fillCrosswordGridWithWords(words);
     })
     .catch(error => {
@@ -37,7 +42,7 @@ function fillCrosswordGrid() {
 function fillCrosswordGridWithWords(words) {
   const cells = document.querySelectorAll('.puzzle-item');
   cells.forEach((cell, index) => {
-    cell.value = words[Math.floor(index / 5)][index % 5];
+    cell.value = words[Math.floor(index / CROSSWORD_SIZE)][index % CROSSWORD_SIZE];
   });
 }
 
